@@ -35,7 +35,21 @@ export function Achievements() {
               <h3 className="mt-5 font-display font-semibold text-xl sm:text-2xl leading-snug">
                 {t.achievements.certificate.title}
               </h3>
-              <p className="mt-2 text-sm text-mist">{t.achievements.certificate.placeholder}</p>
+              <p className="mt-2 text-sm text-mist">{t.achievements.certificate.tagline}</p>
+              <ul className="mt-5 space-y-1.5 font-mono text-xs text-mist/80">
+                <li className="flex gap-2">
+                  <span className="text-mint/70 shrink-0">Issuer</span>
+                  <span className="text-snow">{t.achievements.certificate.issuer}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-mint/70 shrink-0">Hours</span>
+                  <span className="text-snow">{t.achievements.certificate.hours}</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-mint/70 shrink-0">Date</span>
+                  <span className="text-snow">{t.achievements.certificate.date}</span>
+                </li>
+              </ul>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-mint">
                 <Eye size={15} />
                 {t.achievements.certificate.view}

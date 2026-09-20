@@ -179,8 +179,12 @@ export const t = {
     title: 'Achievements & Credentials',
     short: 'Highlighted milestones from my journey so far.',
     certificate: {
-      title: 'Diploma Completion Certificate',
+      title: 'The PEN Diploma',
       label: 'Credential',
+      tagline: 'Certificate of Completion',
+      issuer: 'Instant Software Solutions',
+      hours: '150 training hours',
+      date: 'Completed September 2026',
       placeholder:
         'Certificate preview pending — add your scanned certificate to continue.',
       placeholderDetail: 'public/images/certificate.jpg',
