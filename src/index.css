@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-ink text-snow font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(52, 211, 153, 0.25);
+    color: #f0f5f3;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(52, 211, 153, 0.7);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050807;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a2420;
+    border-radius: 8px;
+    border: 2px solid #050807;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a3a34;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-5 sm:px-8 lg:px-12 mx-auto w-full max-w-content;
+  }
+
+  .section-pad {
+    @apply py-24 lg:py-32;
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, #f0f5f3 0%, #b7f3dc 55%, #34d399 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(244, 247, 246, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244, 247, 246, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(rgba(228, 240, 236, 0.09) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  .glass {
+    background: rgba(11, 16, 14, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .hairline {
+    border: 1px solid rgba(228, 240, 236, 0.08);
+  }
+
+  .card-surface {
+    @apply bg-graphite border border-line rounded-2xl;
+  }
+
+  .terminal-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .terminal-scroll::-webkit-scrollbar-thumb {
+    background: #22302b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

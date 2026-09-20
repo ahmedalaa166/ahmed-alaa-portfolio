@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# logs
+*.log
+dev.log
+dev.err.log
+
+# vercel / deploy tooling
+.vercel/
+
+# editor / os
+.vscode/
+.DS_Store
+Thumbs.db
+
+# qa artifacts
+__qa__*
