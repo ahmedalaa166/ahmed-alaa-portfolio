@@ -91,6 +91,19 @@ export function Achievements() {
 
                 <p className="mt-4 text-sm text-mist">{t.achievements.ctf.label}</p>
                 <p className="mt-2 font-mono text-xs text-mint/80">{t.achievements.ctf.note}</p>
+                <p className="mt-5 font-mono text-[10px] tracking-[0.24em] text-mist/50 uppercase">
+                  {t.achievements.ctf.topicsLabel}
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-1.5">
+                  {t.achievements.ctf.topics.map((topic) => (
+                    <li
+                      key={topic}
+                      className="px-2.5 py-1 rounded-md border border-aqua/20 bg-aqua/5 font-mono text-[11px] text-aqua/90"
+                    >
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-mint">
                   <Eye size={15} />
                   {t.achievements.ctf.view}
