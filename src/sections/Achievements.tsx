@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { FileBadge, Trophy, Eye, Download, ImageOff } from 'lucide-react'
+import { FileBadge, Trophy, Eye, ImageOff } from 'lucide-react'
 import { t } from '../i18n/en'
 import { images } from '../data'
 import { Reveal } from '../components/ui/Reveal'
@@ -113,7 +113,6 @@ export function Achievements() {
               alt={t.achievements.certificate.title}
               placeholder={t.achievements.certificate.placeholder}
               placeholderDetail={t.achievements.certificate.placeholderDetail}
-              withDownload
             />
           </Modal>
         )}
@@ -137,13 +136,11 @@ function ImageViewer({
   alt,
   placeholder,
   placeholderDetail,
-  withDownload = false,
 }: {
   image: string
   alt: string
   placeholder: string
   placeholderDetail: string
-  withDownload?: boolean
 }) {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState(false)
@@ -171,19 +168,6 @@ function ImageViewer({
           </div>
         )}
       </div>
-
-      {loaded && withDownload && (
-        <div className="flex justify-end mt-5">
-          <a
-            href={image}
-            download
-            className="inline-flex items-center gap-2 h-10 px-5 rounded-lg bg-mint text-ink text-sm font-semibold hover:brightness-110 transition-all"
-          >
-            <Download size={15} />
-            {t.achievements.certificate.download}
-          </a>
-        </div>
-      )}
     </div>
   )
 }

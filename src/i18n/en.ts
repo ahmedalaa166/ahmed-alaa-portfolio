@@ -190,7 +190,6 @@ export const t = {
       placeholderDetail: 'public/images/certificate.jpg',
       view: 'View certificate',
       close: 'Close',
-      download: 'Download',
     },
     ctf: {
       rank: '3rd Place',
