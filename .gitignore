@@ -19,3 +19,4 @@ Thumbs.db
 
 # qa artifacts
 __qa__*
+.vercel
