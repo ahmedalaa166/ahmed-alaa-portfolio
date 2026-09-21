@@ -18,6 +18,14 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  useEffect(() => {
     document.documentElement.style.overflow = open ? 'hidden' : ''
     return () => {
       document.documentElement.style.overflow = ''
@@ -126,13 +134,28 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.28, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="lg:hidden overflow-hidden glass border-b border-line"
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[48] bg-black/55 lg:hidden"
+            aria-hidden="true"
+          />
+        )}
+        {open && (
+          <motion.div
+            key="drawer"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 340, damping: 32 }}
+            className="lg:hidden fixed top-[68px] right-0 bottom-0 z-[49] w-[78%] max-w-[320px] overflow-y-auto bg-coal border-l border-line will-change-transform"
+            role="dialog"
+            aria-label={t.a11y.openMenu}
           >
-            <ul className="px-6 py-4 space-y-1">
+            <ul className="px-4 py-4 space-y-1">
               {ids.map((id, i) => (
                 <li key={id}>
                   <a
@@ -155,7 +178,7 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="px-6 pb-6 flex items-center gap-3">
+            <div className="px-4 pb-6 pt-1 flex items-center gap-3">
               <a
                 href={site.github}
                 target="_blank"
