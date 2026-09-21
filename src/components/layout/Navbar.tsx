@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Menu, X, ArrowUpRight } from 'lucide-react'
 import { t } from '../../i18n/en'
@@ -42,11 +43,12 @@ export function Navbar() {
   }
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-line' : 'bg-transparent border-b border-transparent'
-      }`}
-    >
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          scrolled ? 'glass border-b border-line' : 'bg-transparent border-b border-transparent'
+        }`}
+      >
       <nav className="container-px h-[68px] flex items-center justify-between gap-4" aria-label="Main">
         <a
           href="#home"
@@ -130,7 +132,9 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+    </header>
 
+    {createPortal(
       <AnimatePresence>
         {open && (
           <motion.div
@@ -201,7 +205,9 @@ export function Navbar() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
+      </AnimatePresence>,
+      document.body,
+    )}
+    </>
   )
 }
