@@ -151,6 +151,19 @@ export const t = {
     short: 'Early but focused. Building experience through freelance work, labs, and constant practice.',
     items: [
       {
+        role: 'Security Assessment — Responsible Disclosure',
+        org: 'External SaaS Client (Anonymized)',
+        period: 'September 2026',
+        summary:
+          'Performed a low-impact external security assessment of a multi-tenant CRM platform under an authorized engagement. Confirmed authentication-related weaknesses, documented them in a professional disclosure report, and submitted it to the vendor — which accepted the report and initiated follow-up.',
+        points: [
+          'User enumeration via the password-reset endpoint',
+          'Login response leaking 2FA status and failed-attempt counter',
+          'Fixed lockout threshold enabling account-ban Denial of Service',
+          'Exposed API keys, Firebase config, and internal endpoints in the public bundle',
+        ],
+      },
+      {
         role: 'Freelance Cybersecurity & Web Developer',
         org: 'Freelance',
         period: 'January 2025 – April 2025',
