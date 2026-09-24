@@ -14,7 +14,7 @@ export function Experience() {
           <div className="relative pt-1 pb-12">
             <span className="absolute -start-[7px] top-2 w-3.5 h-3.5 rounded-full bg-mint ring-4 ring-mint/15" />
             <Reveal>
-              <div className="ms-5 sm:ms-8">
+              <div className="ms-5 sm:ms-8 space-y-6">
                 {t.experience.items.map((job) => (
                   <article key={job.role} className="card-surface p-6 sm:p-8 hover:border-mint/25 transition-colors duration-300">
                     <div className="flex flex-wrap items-center gap-2.5 mb-3">
