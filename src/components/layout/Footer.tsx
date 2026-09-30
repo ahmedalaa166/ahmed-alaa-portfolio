@@ -17,7 +17,7 @@ export function Footer() {
               <div>
                 <p className="font-display font-semibold text-lg leading-tight">Ahmed Alaa</p>
                 <p className="font-mono text-[11px] text-mist/50 tracking-widest" dir="ltr">
-                  greywail
+                  SleeperAgent
                 </p>
               </div>
             </div>

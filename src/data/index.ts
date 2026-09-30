@@ -20,7 +20,7 @@ export const projects: ProjectMeta[] = [
 
 export const site = {
   name: 'Ahmed Alaa',
-  alias: 'Greywail',
+  alias: 'SleeperAgent',
   email: 'ahmedalaa1662006@gmail.com',
   phoneDisplay: '+20 10 2699 9770',
   phoneRaw: '+201026999770',

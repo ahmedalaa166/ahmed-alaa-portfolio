@@ -17,7 +17,7 @@ export const t = {
   hero: {
     kicker: 'Cybersecurity • Web Development • AI',
     name: 'Ahmed Alaa',
-    alias: 'aka Greywail',
+    alias: 'aka SleeperAgent',
     roles: ['Pentesting & Bug Bounty', 'Web Security', 'AI-Powered Websites'],
     description:
       'Cybersecurity learner and freelance web developer focused on web application security, penetration testing, bug bounty hunting, and AI-powered websites.',
@@ -280,7 +280,7 @@ export const t = {
   },
   footer: {
     tagline: 'Cybersecurity • Web Security • AI-Powered Websites',
-    alias: 'Greywail',
+    alias: 'SleeperAgent',
     rights: 'All rights reserved.',
     built: 'Built with React, TypeScript & Tailwind CSS.',
     backToTop: 'Back to top',

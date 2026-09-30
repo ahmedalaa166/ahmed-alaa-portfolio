@@ -65,8 +65,8 @@ export function Navbar() {
             <span className="block font-display font-semibold tracking-tight text-[15px]">
               Ahmed Alaa
             </span>
-            <span className="block font-mono text-[10px] text-mist/60 tracking-widest" dir="ltr">
-              greywail / freelance
+              <span className="block font-mono text-[10px] text-mist/60 tracking-widest" dir="ltr">
+              SleeperAgent / freelance
             </span>
           </span>
         </a>
